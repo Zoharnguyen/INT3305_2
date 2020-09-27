@@ -69,17 +69,17 @@ class PrefixCodeTree:
         bit_string = "{:08b}".format(int(encoded_data.hex(), 16))
         return self.trie.getListSymbols(self.node_root, bit_string, data_len)
 
-if __name__ == '__main__':
-    '''
-    Run test
-    '''
-    prefix_code_tree = PrefixCodeTree()
-    codebook = {
-         'x1': ['0'],
-         'x2': ['1', '0', '0'],
-         'x3': ['1', '0', '1'],
-         'x4': ['1', '1']
-    }
-    for symbol in codebook:
-        prefix_code_tree.insert(codebook[symbol], symbol)
-    print(prefix_code_tree.decode(b'\xd2\x9f\x20', 21))
+# if __name__ == '__main__':
+#     '''
+#     Run test
+#     '''
+#     prefix_code_tree = PrefixCodeTree()
+#     codebook = {
+#          'x1': ['0'],
+#          'x2': ['1', '0', '0'],
+#          'x3': ['1', '0', '1'],
+#          'x4': ['1', '1']
+#     }
+#     for symbol in codebook:
+#         prefix_code_tree.insert(codebook[symbol], symbol)
+#     print(prefix_code_tree.decode(b'\xd2\x9f\x20', 21))
